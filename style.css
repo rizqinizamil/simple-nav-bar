@@ -1,0 +1,239 @@
+/*
+CSS Simple Navigation Bar
+by Nizamilputra
+http://nizamilputra.com
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*********************************************************************/
+
+body{
+	background:#cee1ee url(images/bg.png) repeat;
+	font-family:'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+}
+.wrapper{
+	width:960px;
+	margin:0 auto;
+}
+header{
+	background: #004783 url(images/bg-menu.png) repeat-x;
+	height:60px;
+	width:100%;
+	-webkit-box-shadow:0 5px 8px rgba(0,17,62,0.6);
+	-moz-box-shadow:0 5px 8px rgba(0,17,62,0.6);
+	box-shadow:0 5px 8px rgba(0,17,62,0.6);
+}
+#logo{
+	padding-top:5px;
+	width:120px;
+	float:left;
+}
+#logo a, #logo a img{
+	text-decoration:none;
+	outline:none;
+	border:none;
+}
+nav{
+	float:right;
+	padding-top:20px;
+}
+nav > ul{
+	float:left;
+	margin-right:50px;
+}
+#search{
+	float:left;
+}
+nav > ul li{
+	display:inline-block;
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+	margin-right:40px;
+}
+nav > ul li a{
+	text-decoration:none;
+	color:#ffffff;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.75);
+}
+nav > ul li a.current{
+	padding:5px 15px 8px;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+	background:none;
+	-webkit-box-shadow:inset 3px -8px 20px rgba(0,0,0,0.7) ,0 1px 1px rgba(255,255,255,0.12);
+	-moz-box-shadow:inset 3px -8px 20px rgba(0,0,0,0.7) ,0 1px 1px rgba(255,255,255,0.12);
+	box-shadow:inset 3px -8px 20px rgba(0,0,0,0.7) ,0 1px 1px rgba(255,255,255,0.12);
+}
+nav > ul li a.current:hover{
+	color:#ffffff;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.75);
+}
+nav > ul li a:hover{
+	color:#cfe2ef;
+	text-shadow:none;
+}
+nav > ul li.dropdown{
+	position:relative;
+	padding:8px 25px 20px 10px;
+	margin-top:-8px;
+}
+nav > ul li.dropdown:hover{
+	background:#eaf1f6;
+	-webkit-border-radius:10px 10px 0 0;
+	-moz-border-radius:10px 10px 0 0;
+	border-radius:10px 10px 0 0;
+	padding:8px 25px 20px 10px;
+}
+nav > ul li.dropdown:hover a{
+	color:#151515;
+	text-shadow:none;
+}
+nav > ul li.dropdown:after{
+	content:' ';
+	background:url(images/dropdown.png) no-repeat;
+	width:12px;
+	height:10px;
+	position:absolute;
+	top: 12px;
+	right: 8px;
+}
+nav > ul li.dropdown:hover:after{
+	background:url(images/dropdown.png) no-repeat 0 -12px;;
+}
+nav ul li > ul{
+	visibility:hidden;
+	position:absolute;
+	margin-top:10px;
+	background:#eaf1f6;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	padding:10px 0;
+	-webkit-box-shadow:0 7px 8px rgba(0,0,0,0.35);
+	-moz-box-shadow:0 7px 8px rgba(0,0,0,0.35);
+	box-shadow:0 7px 8px rgba(0,0,0,0.35);
+	left:0;
+	width:210px;
+}
+nav ul li:hover > ul{
+	visibility:visible;
+}
+nav ul li > ul li{
+	display:block;
+	float:none;
+	font-weight:normal;
+	margin-right:0;
+	padding:10px 30px;
+}
+nav ul li > ul li a{
+	color:#151515;
+	text-shadow:none;
+	font-size:15px;
+}
+nav ul li > ul li:hover{
+	background:#c7e0f1;
+}
+#form{
+	position:relative;
+	bottom:4px;
+}
+input[type="text"]{
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+	padding:4px 25px 6px 10px;
+	background: rgb(12,35,69); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzBjMjM0NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTNiNmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(12,35,69,1) 1%, rgba(26,59,107,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(12,35,69,1)), color-stop(100%,rgba(26,59,107,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(12,35,69,1) 1%,rgba(26,59,107,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(12,35,69,1) 1%,rgba(26,59,107,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(12,35,69,1) 1%,rgba(26,59,107,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(12,35,69,1) 1%,rgba(26,59,107,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c2345', endColorstr='#1a3b6b',GradientType=0 ); /* IE6-8 */
+	border:none;
+	font-size:12px;
+	color:#ffffff;
+	width:141px;
+	-webkit-box-shadow:inset 1px -1px 2px rgba(0,0,0,0.75), 0 1px 1px rgba(255,255,255,0.12);
+}
+input[type="text"]:focus{
+	outline:none;
+}
+input[type="submit"]{
+	background:url(images/search.png) no-repeat;
+	width:10px;
+	height:11px;
+	border:none;
+	position:absolute;
+	top:8px;
+	right:8px;
+}
+#copyright{
+	font-size:12px;
+	color:#436277;
+	text-shadow:0 1px 0 #ffffff;
+	position:absolute;
+	bottom:30px;
+	left:0;
+	right:0;
+	text-align:center;
+	font-weight:bold;
+}
+#copyright a{
+	color:#CC0033;
+	text-decoration:none;
+}
+#copyright a:hover{
+	color:#436277;
+}
