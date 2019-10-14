@@ -70,16 +70,7 @@ header{
 	-moz-box-shadow:0 5px 8px rgba(0,17,62,0.6);
 	box-shadow:0 5px 8px rgba(0,17,62,0.6);
 }
-#logo{
-	padding-top:5px;
-	width:120px;
-	float:left;
-}
-#logo a, #logo a img{
-	text-decoration:none;
-	outline:none;
-	border:none;
-}
+
 nav{
 	float:right;
 	padding-top:20px;
